@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Movies List
+    link(rel="stylesheet", href="/style.css")
+  body
+    h1 Movies
+    p Demo:
+      a(href="/update") /update
+      |  — 
+      a(href="/delete") /delete
+
+    if movies.length
+      each movie in movies
+        .movie-card
+          h2= movie.title
+          ul
+            li Year: #{movie.year}
+            li Rating: #{movie.rating}
+            li ID: #{movie._id}
+    else
+      p No movies found.
